@@ -1,10 +1,14 @@
 package yara;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+/** Import class, used for the import section in YARA signatures.
+ * @author Felix Bilstein
+ * @author yara-signator (at) cocacoding (dot) com
+ * @version 0.1
+ * @since 0.1
+*/
 public class Import {
 	private Set<String> imports;
 	

@@ -1,40 +1,18 @@
 package yara;
 
+/** Rule class, container object that contains all the sections.
+ * @author Felix Bilstein
+ * @author yara-signator (at) cocacoding (dot) com
+ * @version 0.1
+ * @since 0.1
+*/
 public class Rule {
-	public String name;
+	
+	public String name = "";
 	private RuleMeta meta;
 	private RuleStrings strings;
 	private RuleCondition condition;
-	
-/*
-	private String disclaimer =   "    /* DISCLAIMER\n"
-								+ "     * The strings used in this rule have been automatically selected from the\n"
-								+ "     * disassembly of memory dumps and unpacked files, using yara-signator.\n"
-								+ "     * The code is published here:\n"
-								+ "     *   <GITHUB?LINK>\n"
-								+ "     * and the approach is described in detail here:\n"
-								+ "     *   <GITHUB/BA?LINK>\n"
-								+ "     *   <PAPER?LINK>\n"
-								+ "     * As Malpedia is used as data source, please note that for a given\n"
-								+ "     * number of families, only single samples are documented.\n"
-								+ "     * This likely impacts the degree of generalization these rules will offer.\n"
-								+ "     * Take the described generation method also into consideration when you\n"
-								+ "     * apply the rules in your use cases and assign them confidence levels.\n"
-								+ "     *\/\n\n";
-
-*/
-
-	private String disclaimer =   "    /* DISCLAIMER\n"
-								+ "     * The strings used in this rule have been automatically selected from the\n"
-								+ "     * disassembly of memory dumps and unpacked files, using yara-signator.\n"
-								+ "     * The code and documentation / approach will be published in the near future here:\n"
-								+ "     * https://github.com/fxb-cocacoding/yara-signator\n"
-								+ "     * As Malpedia is used as data source, please note that for a given\n"
-								+ "     * number of families, only single samples are documented.\n"
-								+ "     * This likely impacts the degree of generalization these rules will offer.\n"
-								+ "     * Take the described generation method also into consideration when you\n"
-								+ "     * apply the rules in your use cases and assign them confidence levels.\n"
-								+ "     */\n\n";
+	private String comment = "";
 	
 	public RuleMeta getMeta() {
 		return meta;
@@ -54,14 +32,20 @@ public class Rule {
 	public void setCondition(RuleCondition condition) {
 		this.condition = condition;
 	}
-	
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("rule " + this.name + "_auto" + " {\n\n");
 			sb.append("    meta:\n");
 			sb.append(this.meta.toString() + "\n");
 			
-			sb.append(this.disclaimer);
+			sb.append(this.comment + "\n");
 			
 			sb.append("    strings:\n");
 			sb.append(this.strings.toString() + "");

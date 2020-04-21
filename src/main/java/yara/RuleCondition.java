@@ -1,6 +1,7 @@
 package yara;
 
 public class RuleCondition {
+	
 	private String condition = new String();
 
 	public String getCondition() {
