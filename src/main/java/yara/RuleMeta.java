@@ -6,11 +6,29 @@ public class RuleMeta {
 	private String date = new String();
 	private String reference = new String();
 	private String tool = new String();
+	private String tool_config = new String();
 	private String version = new String();
 	private String malpedia_ref = new String();
+	private String malpedia_rule_date = new String();
+	private String malpedia_hash = new String();
 	private String malpedia_version = new String();
 	private String malpedia_license = new String();
+	private String malpedia_sharing = new String();
+
 	
+	
+	public String getMalpedia_rule_date() {
+		return malpedia_rule_date;
+	}
+	public void setMalpedia_rule_date(String malpedia_rule_date) {
+		this.malpedia_rule_date = malpedia_rule_date;
+	}
+	public String getMalpedia_hash() {
+		return malpedia_hash;
+	}
+	public void setMalpedia_hash(String malpedia_hash) {
+		this.malpedia_hash = malpedia_hash;
+	}
 	public String getVersion() {
 		return version;
 	}
@@ -24,10 +42,10 @@ public class RuleMeta {
 		this.malpedia_ref = malpedia_ref;
 	}
 	public String getMalpedia_version() {
-		return malpedia_version;
+		return malpedia_hash;
 	}
 	public void setMalpedia_version(String malpedia_version) {
-		this.malpedia_version = malpedia_version;
+		this.malpedia_hash = malpedia_version;
 	}
 	public String getMalpedia_license() {
 		return malpedia_license;
@@ -42,7 +60,6 @@ public class RuleMeta {
 		this.malpedia_sharing = malpedia_sharing;
 	}
 
-	private String malpedia_sharing = new String();
 
 	public String getAuthor() {
 		return author;
@@ -75,6 +92,14 @@ public class RuleMeta {
 		this.tool = tool;
 	}
 	
+	public void setToolConfig(String wildcardConfig) {
+		this.tool_config = wildcardConfig;
+	}
+	
+	public String getToolConfig() {
+		return this.tool_config;
+	}
+	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("        author = \"" + this.author + "\"" + "\n");
@@ -82,11 +107,15 @@ public class RuleMeta {
 		sb.append("        version = \"" + this.version + "\"" + "\n");
 		sb.append("        description = \"" + this.description + "\"" + "\n");
 		sb.append("        tool = \"" + this.tool + "\"" + "\n");
+		sb.append("        tool_config = \"" + this.tool_config + "\"" + "\n");
 		
 		sb.append("        malpedia_reference = \"" + this.malpedia_ref + "\"" + "\n");
+		sb.append("        malpedia_rule_date = \"" + this.malpedia_rule_date + "\"" + "\n");
+		sb.append("        malpedia_hash = \"" + this.malpedia_hash + "\"" + "\n");
 		sb.append("        malpedia_version = \"" + this.malpedia_version + "\"" + "\n");
 		sb.append("        malpedia_license = \"" + this.malpedia_license + "\"" + "\n");
 		sb.append("        malpedia_sharing = \"" + this.malpedia_sharing + "\"" + "\n");
 		return sb.toString();
 	}
+	
 }
