@@ -3,6 +3,7 @@ package yara;
 public class RuleMeta {
 	private String author = new String();
 	private String description = new String();
+	private String info = new String();
 	private String date = new String();
 	private String reference = new String();
 	private String tool = new String();
@@ -73,6 +74,14 @@ public class RuleMeta {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getInfo() {
+		return info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
+	}
+	
 	public String getDate() {
 		return date;
 	}
@@ -106,8 +115,9 @@ public class RuleMeta {
 		sb.append("        date = \"" + this.date + "\"" + "\n");
 		sb.append("        version = \"" + this.version + "\"" + "\n");
 		sb.append("        description = \"" + this.description + "\"" + "\n");
+		sb.append("        info = \"" + this.info + "\"" + "\n");
 		sb.append("        tool = \"" + this.tool + "\"" + "\n");
-		sb.append("        tool_config = \"" + this.tool_config + "\"" + "\n");
+		sb.append("        signator_config = \"" + this.tool_config + "\"" + "\n");
 		
 		sb.append("        malpedia_reference = \"" + this.malpedia_ref + "\"" + "\n");
 		sb.append("        malpedia_rule_date = \"" + this.malpedia_rule_date + "\"" + "\n");
